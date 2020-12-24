@@ -1,0 +1,31 @@
+@mixin bg-image-light($url: '') {
+
+  background: {
+    image: url(#{$url});
+  }
+
+}
+
+@mixin bg-image($url: '', $size: 100% 100%, $position: center, $repeat: no-repeat) {
+
+  background: {
+    image: url(#{$url});
+    position: $position;
+    repeat: $repeat;
+    size: $size;
+  }
+
+}
+
+@mixin svg-image($url: '', $color: $color-white, $size: $buttons-icon $buttons-icon, $position: 0 0, $repeat: no-repeat) {
+  mask: {
+    image: url(#{$url});
+    position: $position;
+    repeat: #{$repeat};
+    size: $size;
+  }
+
+  background: {
+    color: $color;
+  }
+}

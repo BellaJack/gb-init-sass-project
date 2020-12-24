@@ -1,0 +1,30 @@
+@function parse-int($n) {
+  @return $n / ($n * 0+1);
+}
+
+@function rem($value) {
+  $rem: 1rem;
+
+  @if $value==0 or $value==auto {
+    $rem: $value;
+  }
+
+  @else {
+    $unit: unit($value);
+    $val: parse-int($value);
+
+    @if $unit=='px' {
+      $rem: (decimal-ceil($val / parse-int(16px), 5) + rem);
+    }
+
+    @else if $unit=='rem' {
+      $rem: $value;
+    }
+
+    @else {
+      @error 'Please use px size!';
+    }
+  }
+
+  @return $rem;
+}

@@ -1,0 +1,52 @@
+@mixin input-autofill-background($background: $color-black, $color: $color-white) {
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $background inset;
+    -webkit-text-fill-color: $color;
+  }
+}
+
+@mixin input-placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin form-element-base {
+  border: 1px solid $color-black;
+
+  font: {
+    size: 1rem;
+  }
+
+  width: 100%;
+
+  @include input-placeholder {
+    color: $color-gray-9;
+    opacity: 1;
+  }
+}
+
+@mixin input-base {
+  height: $form-input-height;
+  line-height: $form-input-height;
+}
+
+@mixin input-indent {
+  text-indent: $form-input-labels-indentation-medium;
+
+  padding: {
+    right: $form-input-labels-indentation-medium;
+  }
+}

@@ -1,0 +1,3 @@
+@mixin slide-left($duration: $time-fast, $timing-function: $easing, $delay: 0s) {
+  transition: left $duration $timing-function $delay;
+}

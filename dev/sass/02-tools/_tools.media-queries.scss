@@ -1,0 +1,39 @@
+@mixin respond-above($screen) {
+  @media (min-width: #{$screen}) {
+    @content;
+  }
+}
+
+@mixin respond-below($screen-max) {
+  @media (max-width: #{$screen-max - 0.1}) {
+    @content;
+  }
+}
+
+@mixin respond-between($screen-min, $screen-max) {
+  @media (min-width: #{$screen-min}) and (max-width: #{$screen-max - 0.1}) {
+    @content;
+  }
+}
+
+@mixin ie-only() {
+
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin legacy-edge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin only-tablet() {
+  @include respond-between($screen-tablet, $screen-desktop) {
+    @media (min-width: #{$screen-tablet}) and (max-width: #{$screen-desktop - 0.1}) {
+      @content;
+    }
+  }
+}

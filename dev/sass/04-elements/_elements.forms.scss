@@ -1,0 +1,41 @@
+%form-border {
+  border: 1px solid $color-black;
+}
+
+form {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+label {
+  padding-right: 0.5em;
+  line-height: 2em;
+  font-size: 1em;
+  color: $color-black;
+  display: block;
+}
+
+input,
+select,
+textarea {
+  padding: 2px 3px;
+  vertical-align: middle;
+
+  font-weight: normal;
+  font-size: 11px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+textarea,
+select {
+  @extend %form-border;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+input[type=checkbox] {
+  @extend %form-border;
+}

@@ -1,0 +1,71 @@
+@function get-ratio($width: 100, $height: 100) {
+  @return (100% * $height) / $width;
+}
+
+@function get-height($width: 100, $ratio: 1.46) {
+  @return $width / $ratio;
+}
+
+@mixin aspect-ratio($width, $ratio, $selector: 'img') {
+  $ratio-height: get-height($width, $ratio);
+  position: relative;
+
+  padding: {
+    bottom: get-ratio($width, $ratio-height);
+  }
+
+  >#{$selector} {
+    position: absolute;
+
+    @if($selector !='img') {
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+@mixin visually-hidden($focusable: false) {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  display: block;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  @if ($focusable) {
+
+    &:active,
+    &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+      padding: .5rem;
+    }
+  }
+}
+
+@mixin revert-visually-hidden {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+@mixin calc-col-width($columns: 2) {
+  width: calc((100% - #{$gutter-medium} * #{$columns - 1})/#{$columns});
+}
+
+@mixin background-linear ($color: $color-white, $color-second: $color-gray-5) {
+  background: linear-gradient($color, $color-second);
+  @content;
+}
