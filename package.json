@@ -1,7 +1,7 @@
 {
   "name": "gb-init-sass-project",
   "version": "1.0.0",
-  "description": "Natours Project",
+  "description": "A simple Inverted Triangle Architecture in SASS to start a new project",
   "main": "index.js",
   "scripts": {
     "watch-bk": "\"gulp watch\"",
