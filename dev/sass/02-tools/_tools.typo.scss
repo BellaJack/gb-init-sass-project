@@ -15,11 +15,10 @@
   }
 
   line-height: 1.5;
-  margin: 0 0 $title-margin-small;
+  margin: 0 0 rem($spacing-md);
 
   text: {
     align: center;
-    /*transform: uppercase;*/
   }
 
   @include respond-above($screen-tablet) {
@@ -51,7 +50,7 @@
   &::before,
   &::after {
     background: {
-      color: $color-border-widget;
+      color: $color-black;
     }
 
     content: '';
@@ -112,7 +111,7 @@
   line-height: 1.5;
 
   margin: {
-    bottom: $spacing-xl;
+    bottom: rem($spacing-xl);
   }
 }
 

@@ -39,14 +39,14 @@
 }
 
 @mixin input-base {
-  height: $form-input-height;
-  line-height: $form-input-height;
+  height: rem($form-input-height);
+  line-height: rem($form-input-height);
 }
 
 @mixin input-indent {
-  text-indent: $form-input-labels-indentation-medium;
+  text-indent: rem($form-input-labels-indentation-medium);
 
   padding: {
-    right: $form-input-labels-indentation-medium;
+    right: rem($form-input-labels-indentation-medium);
   }
 }
