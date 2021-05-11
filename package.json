@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "comments": "Gulp 4 with Node 14.15.4",
-    "watch": "gulp watch",
-    "preinstall": "npx npm-force-resolutions"
-  },
-  "resolutions": {
-    "graceful-fs": "^4.2.4"
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",

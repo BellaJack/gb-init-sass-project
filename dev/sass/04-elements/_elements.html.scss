@@ -1,4 +1,22 @@
+::selection {
+	background-color: $color-gray-4;
+	color: $color-black;
+}
+
+@include debug-css-block($DEBUG_ACTIVE);
+
 html {
   box-sizing: border-box;
+  font: {
+    family: $font-family-main;
+    size: 100%;
+  }
   overflow: initial;
+  @if($AUGMENTED_FONT_CINEMA) {
+    @include respond-above($screen-hd) {
+      font: {
+        size: 112.5%;
+      }
+    }
+  }
 }

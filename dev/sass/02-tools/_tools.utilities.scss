@@ -69,3 +69,12 @@
   background: linear-gradient($color, $color-second);
   @content;
 }
+
+@mixin debug-css-block($active: false) {
+	@if $active {
+		html * {
+			background: rgba(130, 226, 255, 0.1);
+			box-shadow: 0 0 0 1px #00c4ff;
+		}
+	}
+}

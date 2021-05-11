@@ -1,129 +1,29 @@
-@mixin siu-text {
+@mixin title-h1 {
   font: {
-    size: 1rem;
-    weight: $font-size-regular;
-  }
-
-  letter-spacing: 0;
-  line-height: 1.5;
-}
-
-@mixin title-page {
-  font: {
-    size: 1.75rem;
-    weight: $font-size-bold;
-  }
-
-  line-height: 1.5;
-  margin: 0 0 rem($spacing-md);
-
-  text: {
-    align: center;
-  }
-
-  @include respond-above($screen-tablet) {
-    font: {
-      size: 2.5rem;
-    }
+    size: rem($font-size-h1);
   }
 }
 
-@mixin title-page-cover() {
-  color: $color-white;
-
-  margin: {
-    bottom: 0;
-  }
-
-  padding: {
-    bottom: 1rem;
-  }
-
-  position: absolute;
-
-  text: {
-    align: left;
-  }
-
-  z-index: z-index('header');
-
-  &::before,
-  &::after {
-    background: {
-      color: $color-black;
-    }
-
-    content: '';
-    display: block;
-    height: 1px;
-    position: absolute;
-  }
-
-  &::before {
-
-    bottom: 6px;
-    left: calc(50% - 75px);
-    width: 150px;
-  }
-
-  &::after {
-
-    bottom: 0;
-    left: calc(50% - 50px);
-    width: 100px;
+@mixin title-h2 {
+  font: {
+    size: rem($font-size-h2);
   }
 }
 
-@mixin title-page-cover-text() {
+@mixin title-h3 {
   font: {
-    size: 3rem;
-  }
-
-  @include respond-above($screen-tablet) {
-    font: {
-      size: 5rem;
-    }
+    size: rem($font-size-h3);
   }
 }
 
-@mixin title-section {
+@mixin title-h4 {
   font: {
-    size: 1.5rem;
-    weight: $font-size-bold;
-  }
-
-  letter-spacing: .4px;
-  line-height: 1.5;
-
-  @include respond-above($screen-tablet) {
-    font: {
-      size: 2rem;
-    }
+    size: rem($font-size-h4);
   }
 }
 
-@mixin title-components {
+@mixin title-h5 {
   font: {
-    size: rem(18px);
-    weight: $font-size-bold;
-  }
-
-  line-height: 1.5;
-
-  margin: {
-    bottom: rem($spacing-xl);
-  }
-}
-
-@mixin caption {
-  font: {
-    size: 0.813rem;
-  }
-
-  letter-spacing: 0.37px;
-  margin: 0.5rem 0;
-
-  text: {
-    align: center;
+    size: rem($font-size-h5);
   }
 }
