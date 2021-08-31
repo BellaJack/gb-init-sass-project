@@ -7,3 +7,4 @@ prod/js/
 dev/css/
 npm-debug.log
 backup node/
+package-lock.json
