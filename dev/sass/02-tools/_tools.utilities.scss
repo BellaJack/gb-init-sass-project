@@ -78,3 +78,18 @@
 		}
 	}
 }
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-centered($transform: translate(-50%, -50%)) {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: $transform;
+}
