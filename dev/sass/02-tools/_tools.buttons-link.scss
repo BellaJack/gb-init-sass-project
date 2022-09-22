@@ -1,0 +1,177 @@
+@function get-color($color-1, $color-2) {
+    @if($color-2 != '' and $color-1 != $color-2) {
+        @return $color-2;
+    } @else {
+        @return '';
+    }
+}
+  
+@mixin hover-color-button($bg-color: '', $text-color: '', $brd-color: '') {
+    @if($bg-color != '') {
+        background: {
+            color: $bg-color;
+        }
+    }
+    @if($brd-color != '') {
+        border: {
+            color: $brd-color;
+        }
+    }
+    @if($text-color != '') {
+        color: $text-color;
+    }
+}
+  
+@mixin color-button($bg-color: $color-white, $text-color: $color-black, $brd-color: $color-white, $has-hover: true, $hover-bg-color: $color-gray-7, $hover-text-color: $color-black, $hover-brd-color: $color-gray-7) {
+    background: {
+        color: $bg-color;
+    }
+    border: {
+        color: $brd-color;
+    }
+    color: $text-color;
+
+    @if($has-hover) {
+        $bg-color-h: get-color($bg-color, $hover-bg-color);
+        $brd-color-h: get-color($brd-color, $hover-brd-color);
+        $text-color-h: get-color($text-color, $hover-text-color);
+        &:focus,
+        &:hover {
+            @include hover-color-button($bg-color-h, $text-color-h, $brd-color-h)
+        }
+    }
+}
+  
+@mixin radius-button($brd-radius: 100px) {
+    border-radius: $brd-radius;
+} 
+  
+@mixin size-button($height: $button-height) {
+    min-height: $height;
+}
+
+@mixin shadow-button($shadow-size: 5px, $shadow-color: $color-black, $radius: 10px) {
+    position: relative;
+    z-index: 2;
+
+    &::after {
+        background: {
+            color: $shadow-color;
+        }
+
+        z-index: -1;
+    }
+}
+  
+@mixin solid-button(
+    $bg-color: $color-white, 
+    $text-color: $color-black, 
+    $brd-color: $color-white, 
+    $hover-bg-color: $color-gray-7, 
+    $hover-text-color: $color-black, 
+    $hover-brd-color: $color-gray-7, 
+    $shadow-color: $color-black, 
+    $shadow-size-x: 6px,
+    $shadow-size-y: 6px, 
+    $radius: 10px) {
+    color: $text-color;
+    position: relative;
+    transition: all $time-fast;
+    z-index: 2;
+
+    &::after,
+    &::before {
+        @include radius-button($radius);
+        content: '';
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    &::after {
+        background: {
+            color: $shadow-color;
+        }
+
+        left: $shadow-size-x;
+        top: $shadow-size-y;
+        transition: transform $time-fast;
+        z-index: -2;
+    }
+
+    &::before {
+        background: {
+            color: $bg-color;
+        }
+
+        border:1px solid $brd-color;
+        color: $text-color;
+        top: 0;
+        z-index: -1;
+    }
+
+    &:focus,
+    &:hover {
+        &::before {
+            @include hover-color-button($hover-bg-color, $hover-text-color, $hover-brd-color);
+        }
+    }
+
+    &:hover {
+        transform: translate($shadow-size-x / 2, $shadow-size-y / 2);
+
+        &::after {
+            transform: translate(-#{$shadow-size-x / 2}, -#{$shadow-size-y / 2});
+        }
+    }
+
+    &:active {
+        transform: translate($shadow-size-x, $shadow-size-y);
+
+        &::after {
+            transform: translate(-#{$shadow-size-x}, -#{$shadow-size-y});
+        }
+    }
+}
+  
+@mixin primary-button {
+    @include solid-button (
+        var(--button-bg-color-primary), 
+        var(--button-text-color-primary), 
+        var(--button-brd-color-primary), 
+        var(--button-bg-color-hover-primary), 
+        var(--button-text-color-hover-primary), 
+        var(--button-brd-color-hover-primary), 
+        var(--button-shadow-color-primary), 
+        $button-shadow-gap-x,
+        $button-shadow-gap-y,
+        $button-border-radius);
+    @include size-button(var(--button-height));
+
+    font: {
+        weight: $font-size-bold;
+    }
+
+    padding: $spacing-xs $spacing-lg;
+    
+    text: {
+        align: center;
+    }
+}
+  
+@mixin secondary-button {
+    @include solid-button(var(--color-primary-light), var(--color-secondary), var(--color-secondary), var(--color-primary-light-2), var(--color-secondary), var(--color-secondary), var(--color-primary-dark), $button-shadow-gap, $form-input-border-radius);
+    @include size-button(var(--button-height));
+
+    font: {
+        weight: $font-size-bold;
+    }
+
+    padding: $spacing-xs $spacing-lg;
+
+    text: {
+        align: center;
+    }
+}

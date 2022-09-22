@@ -1,0 +1,6 @@
+.gb-btn-primary {
+    @include primary-button;
+    > * {
+        padding: 0;
+    }
+}

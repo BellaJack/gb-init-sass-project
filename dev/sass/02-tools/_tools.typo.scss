@@ -1,29 +1,36 @@
 @mixin title-h1 {
   font: {
-    size: rem($font-size-h1);
+    size: var(--typo-font-size-h1);
   }
+  line-height: var(--typo-line-height-h1);
 }
 
 @mixin title-h2 {
   font: {
-    size: rem($font-size-h2);
+    size: var(--typo-font-size-h2);
   }
 }
 
 @mixin title-h3 {
   font: {
-    size: rem($font-size-h3);
+    size: var(--typo-font-size-h3);
   }
 }
 
 @mixin title-h4 {
   font: {
-    size: rem($font-size-h4);
+    size: var(--typo-font-size-h4);
   }
 }
 
 @mixin title-h5 {
   font: {
-    size: rem($font-size-h5);
+    size: var(--typo-font-size-h5);
+  }
+}
+
+@mixin title-h6 {
+  font: {
+    size: var(--typo-font-size-h6);
   }
 }

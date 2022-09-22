@@ -1,18 +1,10 @@
 $font-size-light: 300;
 $font-size-regular: 400;
-$font-size-bold: 600;
+$font-size-medium: 500;
+$font-size-semi-bold: 600;
+$font-size-bold: 700;
+$font-size-extra-bold: 800;
 $font-style-italic: italic;
+
 $font-family-main: Arial;
-
-/*
- + SIZE BASED ON https://type-scale.com/
- + PERFECT FOURTH
-*/
-
-$font-size-h1: 67.34px;
-$font-size-h2: 50.52px;
-$font-size-h3: 37.90px;
-$font-size-h4: 28.43px;
-$font-size-h5: 21.33px;
-$font-size-text: 16px;
-$font-size-small: 12px;
+$font-family-display: Georgia, serif;

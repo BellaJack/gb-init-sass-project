@@ -1,0 +1,32 @@
+.gb-u-flex {
+    display: flex;
+}
+
+.gb-u-flex-v {
+    display: flex;
+    flex: {
+        flow: column;
+    }
+}
+
+.gb-u-flex-gap {
+    &-xs {
+        gap: var(--u-spacing-y-xs);
+    }
+
+    &-sm {
+        gap: var(--u-spacing-y-sm);
+    }
+
+    &-md {
+        gap: var(--u-spacing-y-md);
+    }
+
+    &-lg {
+        gap: var(--u-spacing-y-lg);
+    }
+
+    &-xl {
+        gap: var(--u-spacing-y-xl);
+    }
+}

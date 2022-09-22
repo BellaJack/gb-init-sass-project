@@ -1,0 +1,59 @@
+:root {
+    --typo-body-line-height: 1.5;
+    --typo-font-size-h1: #{rem($font-size-h1)};
+    --typo-font-size-h2: #{rem($font-size-h2)};
+    --typo-font-size-h3: #{rem($font-size-h3)};
+    --typo-font-size-h4: #{rem($font-size-h4)};
+    --typo-font-size-h5: #{rem($font-size-h5)};
+    --typo-font-size-h6: #{rem($font-size-h6)};
+    --typo-line-height-h1: 1.148;
+
+    --u-spacing-x-xs: #{rem($spacing-xs)};
+    --u-spacing-x-sm: #{rem($spacing-sm)};
+    --u-spacing-x-md: #{rem($spacing-unit * 3)};
+    --u-spacing-x-lg: #{rem($spacing-lg)};
+    --u-spacing-x-xl: #{rem($spacing-xl)};
+    --u-spacing-y-xs: #{rem($spacing-unit * 2)};
+    --u-spacing-y-sm: #{rem($spacing-unit * 3)};
+    --u-spacing-y-md: #{rem($spacing-unit * 4)};
+    --u-spacing-y-lg: #{rem($spacing-unit * 6)};
+    --u-spacing-y-xl: #{rem($spacing-unit * 8)};
+
+    --color-primary: #{$color-gun-metal};
+    --color-display-secondary: #{$color-crimson-glory};
+    --color-display-tertiary: #{$color-castleton-green};
+    --color-display-quaternary: #{$color-cobalt-blue};
+
+    --button-bg-color-primary: #{$color-white};
+    --button-text-color-primary: #{$color-gun-metal};
+    --button-brd-color-primary: #{$color-gun-metal};
+    --button-shadow-color-primary: #{$color-gun-metal};
+    --button-bg-color-hover-primary: #{$color-gray-1};
+    --button-text-color-hover-primary: #{$color-gun-metal};
+    --button-brd-color-hover-primary: #{$color-gun-metal};
+
+    --button-height: #{rem($button-height)};
+}
+  
+@include respond-above($screen-desktop) {
+    :root {
+        --typo-body-line-height: 1.625;
+        --typo-font-size-h1: #{rem($font-size-h1-md)};
+        --typo-font-size-h2: #{rem($font-size-h2-md)};
+        --typo-font-size-h3: #{rem($font-size-h3-md)};
+        --typo-font-size-h4: #{rem($font-size-h4-md)};
+        --typo-font-size-h5: #{rem($font-size-h5-md)};
+        --typo-font-size-h6: #{rem($font-size-h6-md)};
+    }
+}
+  
+@include respond-above($screen-large) {
+    :root {
+        --typo-font-size-h1: #{rem($font-size-h1-lg)};
+        --typo-font-size-h2: #{rem($font-size-h2-lg)};
+        --typo-font-size-h3: #{rem($font-size-h3-lg)};
+        --typo-font-size-h4: #{rem($font-size-h4-lg)};
+        --typo-font-size-h5: #{rem($font-size-h5-lg)};
+        --typo-font-size-h6: #{rem($font-size-h6-lg)};
+    }
+}

@@ -7,4 +7,17 @@ $wrap-large: 1170px;
  + FORM
 */
 $form-input-height: 40px;
+$form-input-labels-indentation: 20px;
 $form-input-labels-indentation-medium: 20px;
+$form-input-border-radius: 10px;
+$form-rows-gap: 24px;
+$form-button-row-gap: $form-rows-gap * 2;
+
+/*
+ + BUTTON
+*/
+
+$button-border-radius: 999px;
+$button-height: 30px;
+$button-shadow-gap-x: 3px;
+$button-shadow-gap-y: 6px;

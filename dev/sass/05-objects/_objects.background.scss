@@ -1,0 +1,55 @@
+.gb-u-bg {
+    &-primary {
+        background: {
+            color: var(--color-primary);
+        }
+    }
+
+    &-secondary {
+        background: {
+            color: var(--color-display-secondary);
+        }
+    }
+
+    &-tertiary {
+        background: {
+            color: var(--color-display-tertiary);
+        }
+    }
+
+    &-quaternary {
+        background: {
+            color: var(--color-display-quaternary);
+        }
+    } 
+
+    &-gray {
+        background: {
+            color: $color-gray-5;
+        } 
+    }
+
+    &-comb-1 {
+        background: {
+            color: $color-light-green;
+        }
+    }
+
+    &-comb-2 {
+        background: {
+            color: $color-mauve;
+        }
+    }
+
+    &-comb-3 {
+        background: {
+            color: $color-sandstorm;
+        }
+    }
+
+    &-comb-4 {
+        background: {
+            color: $color-baby-blue-eyes;
+        }
+    }
+}

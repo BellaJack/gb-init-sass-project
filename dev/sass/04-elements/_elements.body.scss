@@ -1,4 +1,14 @@
 body {
-  line-height: 1.5;
+  background: {
+    color: #fff;
+  }
+
+  color: var(--color-primary);
+
+  font: {
+    family: $font-family-main;
+  }
+  
+  line-height: var(--typo-body-line-height);
   overflow: initial;
 } 

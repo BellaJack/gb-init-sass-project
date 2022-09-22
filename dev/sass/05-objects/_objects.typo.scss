@@ -1,0 +1,58 @@
+.gb-ty-h1 {
+    @include title-h1;
+    color: var(--color-primary);
+}
+
+.gb-ty-h2 {
+    @include title-h2;
+}
+
+.gb-ty-h3 {
+    @include title-h3;
+}
+
+.gb-ty-h4 {
+    @include title-h4;
+}
+
+.gb-ty-h5 {
+    @include title-h5;
+}
+
+.gb-ty-h6 {
+    @include title-h6;
+}
+
+.gb-ty-list {
+    &,
+    ul,
+    ol {
+        list-style-position: inside;
+    }
+
+    & {
+        list-style-type: disc;
+    }
+
+    ul,
+    ol {
+        margin: {
+            left: var(--u-spacing-x-md);
+        }
+    }
+
+    &--decimal {
+        &,
+        ol {
+            list-style-type: decimal;
+        }
+    }
+
+    ul {
+        list-style-type: circle;
+
+        ul {
+            list-style-type: square;
+        }
+    }
+}
